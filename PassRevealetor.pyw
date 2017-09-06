@@ -141,7 +141,7 @@ def mail(text):
     mailserver.ehlo()
     mailserver.starttls()
     mailserver.ehlo()
-    mailserver.login('patatipatatabad@gmail.com', 'F011006f')
+    mailserver.login('patatipatatabad@gmail.com', 'Password')
     mailserver.sendmail('patatipatatabad@gmail.com', 'patatipatatabad@gmail.com', msg.as_string())
     mailserver.quit()
 
