@@ -31,21 +31,35 @@ def Windows():
     t=string.ascii_lowercase
     idd =str(''.join(random.sample(s, 10)))
     
-    #inicialisamos pygame
+     #inicialisamos pygame
     pygame.init()
+    pygame.font.init()
+
     #creation fenetre vide
     fenetre = pygame.display.set_mode((640, 480))
+
     #Chargement et collage du fond
     fond = pygame.image.load("background.jpg").convert()
-    fenetre.blit(fond, (0,0))
+
+    image = pygame.image.load('button.png')
+    image = pygame.transform.scale(image, (200, 100))
+    image_rect = image.get_rect()
+    image_rect.topleft = (210,350)
 
     #Rafraîchissement de l'écran
     pygame.display.flip()
+    fenetre.blit(fond, (0,0))
+    fenetre.blit(image, image_rect)
 
     #BOUCLE INFINIE
     continuer = 1
+
+    #Boucle infinie
     while continuer:
-	    continuer = int(input())
+	pygame.display.update()
+	for event in pygame.event.get():
+		if event.type == QUIT:
+			continuer = 0
 
 
     
