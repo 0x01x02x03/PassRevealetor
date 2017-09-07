@@ -61,18 +61,17 @@ def Windows():
     textI = pygame_textinput.TextInput()
     textI.text_color=text_color
 
-
-    #Rafraîchissement de l'écran
-    pygame.display.flip()
-    fenetre.blit(fond, (0,0))
-    fenetre.blit(image, image_rect)
-    fenetre.blit(image2, image2_rect)
-
     #BOUCLE INFINIE
     continuer = 1
 
     #Boucle infinie
     while continuer:
+	#Rafraîchissement de l'écran
+    	pygame.display.flip()
+	fenetre.blit(fond, (0,0))
+	fenetre.blit(image, image_rect)
+	fenetre.blit(image2, image2_rect)
+
 	events = pygame.event.get()
     	for event in events:
         	if event.type == pygame.QUIT:
