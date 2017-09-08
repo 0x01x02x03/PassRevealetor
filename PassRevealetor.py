@@ -91,7 +91,11 @@ def Windows():
                         		fenetre.blit(nouveaufond, (0,0))
                         		pygame.display.flip()
 
-    # Feed it with events every frame
+    	# Feed it with events every frame
+	pygame.display.flip()
+	fenetre.blit(fond, (0,0))
+	fenetre.blit(image, image_rect)
+	fenetre.blit(image2, image2_rect)
 	textI.update(events)
 	fenetre.blit(textI.get_surface(), (138, 325))
     	pygame.display.update()
