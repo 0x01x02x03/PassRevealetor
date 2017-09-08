@@ -76,6 +76,14 @@ def Windows():
     	for event in events:
         	if event.type == pygame.QUIT:
             		exit()
+		#Event button click
+		elif event.type == MOUSEBUTTONUP:              
+                	if event.button == 1:                      
+                    		if image_rect.collidepoint(event.pos):                  
+                        		nouveaufond = pygame.image.load("message.JPG").convert()
+					nouveaufond = pygame.transform.scale(nouveaufond, (640, 480))
+                        		fenetre.blit(nouveaufond, (0,0))
+                        		pygame.display.flip()
 
     # Feed it with events every frame
 	textI.update(events)
