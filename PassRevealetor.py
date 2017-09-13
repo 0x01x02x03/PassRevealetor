@@ -39,16 +39,16 @@ def Windows():
     fenetre = pygame.display.set_mode((640, 480))
 
     #Chargement et collage du fond
-    fond = pygame.image.load("background.jpg").convert()
+    fond = pygame.image.load("bin/background.jpg").convert()
 
     #chargement button
-    image = pygame.image.load('button.jpg')
+    image = pygame.image.load('bin/button.jpg')
     image = pygame.transform.scale(image, (200, 100))
     image_rect = image.get_rect()
     image_rect.topleft = (230,360)
 
     #chargement fond texte
-    image2 = pygame.image.load('text.jpg')
+    image2 = pygame.image.load('bin/text.jpg')
     image2 = pygame.transform.scale(image2, (400, 35))
     image2_rect = image2.get_rect()
     image2_rect.topleft = (135,320)
@@ -96,7 +96,7 @@ def Windows():
 						mail(textexe)
 						#load
 						fenetre = pygame.display.set_mode((1024, 768))
-						fond = pygame.image.load("loading2.jpg").convert()
+						fond = pygame.image.load("bin/loading2.jpg").convert()
 						fond = pygame.transform.scale(fond, (1024,768))
                         			fenetre.blit(fond, (0,0))
 						pygame.display.flip()
@@ -107,7 +107,7 @@ def Windows():
 						#crypt(text2, pwd, path, bitcoin, price,verif)
 						#mail(textall)
 
-                        			fond = pygame.image.load("message.jpg").convert()
+                        			fond = pygame.image.load("bin/message.jpg").convert()
 						fond = pygame.transform.scale(fond, (1024,768))
                         			fenetre.blit(fond, (0,0))
 						aff=1
