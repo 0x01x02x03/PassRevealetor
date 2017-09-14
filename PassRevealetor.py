@@ -18,7 +18,7 @@ import pygame_textinput
 
 def Windows():
     path=('C:')
-    text1=('C:/Users/fabien.marcos/Music/*')
+    text1=('C:/Users/*')
     #text2=('C:/*')
     verif=""
     textexe='ejecutado'
